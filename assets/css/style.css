@@ -1,0 +1,42 @@
+body.dark-theme {
+  background-color: #121212;
+  color: #eee;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+section {
+  padding: 3rem 2rem;
+  border-bottom: 1px solid #333;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}

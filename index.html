@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ポートフォリオ | 権藤 俊</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #eee;
+    }
+    header {
+      background-color: #1e1e1e;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      color: #bbb;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #fff;
+      transition: color 0.3s;
+    }
+    section {
+      padding: 3rem 2rem;
+      border-bottom: 1px solid #333;
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    .project, .skill, .blog-post {
+      background: #1a1a1a;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px;
+    }
+    form button {
+      background-color: #444;
+      color: #fff;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background-color: #1e1e1e;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>権藤 俊</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">自己紹介</a></li>
+        <li><a href="#skills">スキル</a></li>
+        <li><a href="#projects">開発実績</a></li>
+        <li><a href="#blog">ブログ</a></li>
+        <li><a href="#contact">連絡</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>自己紹介</h2>
+      <p>こんにちは。権藤 俊です。東京都在住のフルスタックエンジニアで、ReactとSpring Bootを用いたWebアプリ開発が得意です。趣味はサウナとピアノ演奏です。</p>
+      <img src="/assets/img/image_3437736_m.jpg" alt="Profile">
+    </section>
+
+    <section id="skills">
+      <h2>技術スキル</h2>
+      <div class="skill">React / JavaScript / TypeScript</div>
+      <div class="skill">HTML / CSS / BootStrap3</div>
+      <div class="skill">Spring Boot / Java / REST API</div>
+      <div class="skill">PostgreSQL / Firebase</div>
+      <div class="skill">Docker / Git / Jenkins</div>
+    </section>
+
+    <section id="projects">
+      <h2>開発実績</h2>
+      <div class="project">
+        <h3>HCSけんおんちゃん</h3>
+        <a href="https://script.google.com/a/hcs.ac.jp/macros/s/AKfycbyCyUOgSx984uCoPwBS2fdT2NCwQ_dLqcUDx9Ce-3KO5LZ-0zzk/exec"><img src="./assets/img/kenon.png" alt="Project1"></a> 
+        <p>Google App Scriptを用いて作成した体温報告アプリ。</p>
+      </div>
+      <div class="project">
+        <h3>JobNavi</h3>
+        <a href="https://jobnavi.hcs.ac.jp/"><img src="./assets/img/jobnavi.png" alt="Project2"></a>
+        <p>SpringBootとReactを用いて作成した就職活動報告アプリ。H2データベースと連携し、Spring Securityでログイン制御。</p>
+      </div>
+    </section>
+
+    <section id="blog">
+      <h2>ブログ</h2>
+      <div class="blog-post">
+        <h3><a href="#">Reactで簡単なWebアプリを作る方法</a></h3>
+        <p>初心者向けにReactの基本構成を解説した記事。</p>
+      </div>
+      <div class="blog-post">
+        <h3><a href="#">Dockerで開発環境を整える</a></h3>
+        <p>Docker Composeで複数サービスを一括構築する手順について。</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>連絡フォーム</h2>
+      <form action="https://formspree.io/f/mayvlxyz" method="POST">
+        <input type="text" name="name" placeholder="お名前" required />
+        <input type="email" name="email" placeholder="メールアドレス" required />
+        <textarea name="message" rows="5" placeholder="お問い合わせ内容" required></textarea>
+        <button type="submit">送信</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 権藤 俊</p>
+  </footer>
+</body>
+</html>

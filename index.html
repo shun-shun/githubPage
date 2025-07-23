@@ -11,65 +11,91 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #121212;
       color: #eee;
+      line-height: 1.6;
     }
     header {
       background-color: #1e1e1e;
-      padding: 1rem 2rem;
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       margin: 0;
       padding: 0;
     }
     nav a {
       color: #bbb;
       text-decoration: none;
+      font-weight: 500;
+      position: relative;
     }
-    nav a:hover {
-      color: #fff;
-      transition: color 0.3s;
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #00bcd4;
+      bottom: -4px;
+      left: 0;
+      transition: 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
     }
     section {
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       border-bottom: 1px solid #333;
+      max-width: 960px;
+      margin: 0 auto;
     }
     h2 {
       margin-bottom: 1rem;
+      font-size: 2rem;
+      border-left: 5px solid #00bcd4;
+      padding-left: 0.75rem;
     }
     .project, .skill, .blog-post {
       background: #1a1a1a;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+    .project:hover, .blog-post:hover {
+      transform: translateY(-4px);
     }
     img {
       max-width: 100%;
       height: auto;
-      border-radius: 4px;
+      border-radius: 6px;
     }
-    form input, form textarea, form button {
-      display: block;
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.5rem;
-      border: none;
-      border-radius: 4px;
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 2.5rem;
+      margin-top: 2rem;
     }
-    form button {
-      background-color: #444;
-      color: #fff;
-      cursor: pointer;
+    .social-icons a {
+      color: #ccc;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #00bcd4;
+      transform: scale(1.1);
     }
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 3rem 1rem;
       font-size: 0.9rem;
       background-color: #1e1e1e;
+      border-top: 1px solid #333;
     }
   </style>
 </head>
@@ -89,31 +115,31 @@
 
   <main>
     <section id="about">
+      <img src="./assets/img/gon.png" alt="Profile" style="text-align: center; width: 20%;">
       <h2>自己紹介</h2>
       <p>こんにちは。権藤 俊です。東京都在住のフルスタックエンジニアで、ReactとSpring Bootを用いたWebアプリ開発が得意です。趣味はサウナとピアノ演奏です。</p>
-      <img src="./assets/img/gon.png" alt="Profile" style="width: 10%; height: 10%;">
     </section>
 
     <section id="skills">
       <h2>技術スキル</h2>
       <div class="skill">React / JavaScript / TypeScript</div>
-      <div class="skill">HTML / CSS / BootStrap3</div>
+      <div class="skill">HTML / CSS / Sass / Tailwind</div>
       <div class="skill">Spring Boot / Java / REST API</div>
-      <div class="skill">PostgreSQL / Firebase</div>
-      <div class="skill">Docker / Git / Jenkins</div>
+      <div class="skill">MySQL / PostgreSQL / Firebase</div>
+      <div class="skill">Docker / Git / GitHub Actions</div>
     </section>
 
     <section id="projects">
       <h2>開発実績</h2>
       <div class="project">
-        <h3>HCSけんおんちゃん</h3>
-        <a href="https://script.google.com/a/hcs.ac.jp/macros/s/AKfycbyCyUOgSx984uCoPwBS2fdT2NCwQ_dLqcUDx9Ce-3KO5LZ-0zzk/exec"><img src="./assets/img/kenon.png" alt="Project1"></a> 
-        <p>Google App Scriptを用いて作成した体温報告アプリ。</p>
+        <h3>Todo管理アプリ</h3>
+        <img src="./assets/img/kenon.png" alt="Project1">
+        <p>ReactとSpring Bootを用いて作成したタスク管理アプリ。Firebase Authと連携して認証機能を実装。</p>
       </div>
       <div class="project">
-        <h3>JobNavi</h3>
-        <a href="https://jobnavi.hcs.ac.jp/"><img src="./assets/img/jobnavi.png" alt="Project2"></a>
-        <p>SpringBootとReactを用いて作成した就職活動報告アプリ。H2データベースと連携し、Spring Securityでログイン制御。</p>
+        <h3>チャットアプリ</h3>
+        <img src="./assets/img/jobnavi.png" alt="Project2">
+        <p>WebSocketを使ったリアルタイムチャットアプリ。H2データベースと連携し、Spring Securityでログイン制御。</p>
       </div>
     </section>
 
@@ -130,13 +156,12 @@
     </section>
 
     <section id="contact">
-      <h2>連絡フォーム</h2>
-      <form action="https://formspree.io/f/mayvlxyz" method="POST">
-        <input type="text" name="name" placeholder="お名前" required />
-        <input type="email" name="email" placeholder="メールアドレス" required />
-        <textarea name="message" rows="5" placeholder="お問い合わせ内容" required></textarea>
-        <button type="submit">送信</button>
-      </form>
+      <h2>連絡先（SNS）</h2>
+      <p>以下のSNSからお気軽にご連絡ください。</p>
+      <div class="social-icons">
+        <a href="https://x.com/your_username" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://instagram.com/your_username" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
     </section>
   </main>
 
